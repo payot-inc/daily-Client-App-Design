@@ -1,6 +1,6 @@
 import React,{useState, useEffect} from 'react';
 import {View, Text,Dimensions,TouchableHighlight, TouchableOpacity,FlatList, StyleSheet, Modal, Image} from 'react-native';
-import { TabView, SceneMap, TabBar } from 'react-native-tab-view';
+import {Container, Tab, Tabs, ScrollableTab } from 'native-base';
 
 import Icon from 'react-native-vector-icons/MaterialCommunityIcons';
 import Basket from '../../components/basket';
@@ -136,62 +136,40 @@ const TabContainer = props => {
     )
 }
 
-  const initialLayout = { width: Dimensions.get('window').width };
-
   export default props => {     
 
     const [services, setServices] = useState([], []);
-    const [index, setIndex] = React.useState(0);
     const [confirm, setConfirm] = useState(false);
 
-    const [routes] = React.useState([
-      { key: 'first', title: '생활빨래' },
-      { key: 'second', title: '의류' },
-      { key: 'three', title: '악세사리' },
-      { key: 'four', title: '신발' },
-      { key: 'five', title: '이불' },
-    ]);
-
     useEffect(() => setServices(DummyData), []);
-  
-    const renderScene = SceneMap({
-      first: props => <TabContainer data={services.filter(({ category1 }) => category1 === '생활빨래')} />,
-      second: props => <TabContainer data={services.filter(({ category2 }) => category2 === '의류')} />,
-      three: props => <TabContainer data={services.filter(({ category2 }) => category2 === '악세사리')} />,
-      four: props => <TabContainer data={services.filter(({ category2 }) => category2 === '신발')} />,
-      five: props => <TabContainer data={services.filter(({ category2 }) => category2 === '이불')} />,
-    });
-
-    const RenderTabBar = props => {
-        return(
-            <TabBar {...props}
-                inactiveColor={'#999'}
-                activeColor={'#01a1dd'}
-                scrollEnabled={true}
-                pressColor={'#e2e2e2'}
-                tabStyle={{width:80}}
-                indicatorStyle={{backgroundColor:'#01a1dd'}}    
-                style={{backgroundColor:'#fff'}}
-            />
-        )
-
-    }
+    
 
     const [basketVisible , setBasketVisible] = useState(false)
     const [alertModal, setAlertModal] = useState(false);
 
     return(
         <View style={{flex:1}}>
-            <View style={{flex:1}}>
-                <TabView
-                    navigationState={{index, routes}}
-                    renderTabBar={RenderTabBar}
-                    renderScene={renderScene}
-                    onIndexChange={setIndex}
-                    initialLayout={initialLayout}
-                    swipeEnabled={true}
-                />
-            </View>
+            <Container style={{flex:1}}>
+                <Tabs
+                    renderTabBar={()=>
+                        <ScrollableTab
+                            style={{backgroundColor:'#fff'}}
+                            tabsContainerStyle={{backgroundColor:'#fff',justifyContent:'flex-start'}}
+                            underlineStyle={{backgroundColor:'#01a1dd',height:2,}}
+                        />
+                    }
+                >
+                    <Tab 
+                        heading="생활빨래"
+                        tabStyle={{backgroundColor:'#fff'}}
+                        activeTabStyle={{backgroundColor:'#fff'}}
+                        textStyle={{color:'#494949'}}
+                        activeTextStyle={{color:'#01a1dd'}}
+                    >
+                        <TabContainer data={services}/>
+                    </Tab>
+                </Tabs>
+            </Container>
                 
 
             <View style={{backgroundColor:'#fff',width:'100%',borderTopWidth:1,borderColor:'#01a1dd',paddingTop:0,}}>

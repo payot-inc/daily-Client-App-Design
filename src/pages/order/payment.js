@@ -1,9 +1,9 @@
 import React,{useState, setState} from 'react';
-import {View, Text, ScrollView, Dimensions, TouchableHighlight,FlatList, Modal,StyleSheet ,TouchableOpacity,} from 'react-native';
+import {View, Text, ScrollView, Dimensions, TouchableHighlight,FlatList, Modal,StyleSheet ,TouchableOpacity, Image} from 'react-native';
 import {Button, Divider,Checkbox, RadioButton} from 'react-native-paper';
 import Icon from 'react-native-vector-icons/MaterialCommunityIcons'
 import Carousel from 'react-native-snap-carousel';
-
+import faker from 'faker';
 import Loading from '../../components/loading';
 import AgrmtModal from '../../components/agrmtModal';
 
@@ -218,9 +218,25 @@ export default props =>{
                 <Text style={{width:90,color:'#9a9a9a'}}>공동출입문</Text>
                 <Text style={{flex:1,lineHeight:20}}>#1023</Text>
               </View>
- 
             </View>
+          </View>
 
+          <View style={styles.section}>
+            <View style={styles.sectionTitle}>
+              <Text style={styles.sectionTitleText}>수거/배달원</Text>
+            </View>
+            
+            <View style={styles.sectionCont}>
+              <View style={{flexDirection:'row',alignItems:'center'}}>
+                <View style={{width:80,height:80,backgroundColor:'#f2f2f2',borderRadius:40,overflow:'hidden'}}>
+                  <Image source={{uri:faker.image.avatar()}} style={{resizeMode:"contain",width:'100%',height:'100%'}}/>
+                </View>
+                <View style={{flex:1,marginLeft:20}}>
+                  <Text style={{marginBottom:5,fontSize:16,}}>박수민</Text>
+                  <Text style={{marginBottom:5,fontSize:14,color:'#888'}}>010-8525-4561</Text>
+                </View>
+              </View>
+            </View>
           </View>
 
           <View style={styles.section}>
