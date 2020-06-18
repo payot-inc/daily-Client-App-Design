@@ -6,18 +6,18 @@ import Icon from 'react-native-vector-icons/MaterialCommunityIcons';
 
 
 const Data = [
-    // {
-    //     couponTitle: '신규오픈 행사쿠폰',
-    //     date:'2019-12-12',
-    //     price:3000,
-    //     category:'이불'
-    // },
-    // {
-    //     couponTitle: '추석기념 세탁세일',
-    //     date:'2019-12-12',
-    //     price:5000,
-    //     category:'전체'
-    // },
+    {
+        couponTitle: '신규오픈 행사쿠폰',
+        date:'2019-12-12',
+        price:3000,
+        parthner:'박수민'
+    },
+    {
+        couponTitle: '추석기념 세탁세일',
+        date:'2019-12-12',
+        price:5000,
+        parthner:'박수민'
+    },
 
 ]
 
@@ -72,7 +72,7 @@ export default class Coupon extends React.Component{
                                 <View style={styles.couponCont}>
                                     <Text style={{fontSize:16,marginBottom:5}}>{item.couponTitle}</Text>
                                     <Text style={{color:'#888',marginBottom:5,fontSize:13}}>{item.date} 까지 사용가능</Text>
-                                    <Text style={{fontSize:13,}}>사용가능대상: {item.category}</Text>
+                                    <Text style={{fontSize:13,}}>- <Text style={{color:'#01a1dd'}}>{item.parthner}</Text>기사 전용 할인쿠폰</Text>
                                 </View>
                             </View>
                         }
