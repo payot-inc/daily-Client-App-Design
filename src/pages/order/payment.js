@@ -38,43 +38,13 @@ const CouponModal = props => {
       couponTitle: '신규오픈 행사쿠폰',
       date:'2019-12-12',
       price:3000,
-      category:'이불'
+      parthner:'박수민'
     },
     {
-      couponTitle: '추석기념 세탁세일',
+      couponTitle: '그냥 할인쿠폰',
       date:'2019-12-12',
-      price:5000,
-      category:'전체'
-    },
-    {
-      couponTitle: '추석기념 세탁세일',
-      date:'2019-12-12',
-      price:5000,
-      category:'전체'
-    },
-    {
-      couponTitle: '추석기념 세탁세일',
-      date:'2019-12-12',
-      price:5000,
-      category:'전체'
-    },
-    {
-      couponTitle: '추석기념 세탁세일',
-      date:'2019-12-12',
-      price:5000,
-      category:'전체'
-    },
-    {
-      couponTitle: '추석기념 세탁세일',
-      date:'2019-12-12',
-      price:5000,
-      category:'전체'
-    },
-    {
-      couponTitle: '추석기념 세탁세일',
-      date:'2019-12-12',
-      price:5000,
-      category:'전체'
+      price:3000,
+      parthner:'김용희'
     },
   ]
 
@@ -101,11 +71,12 @@ const CouponModal = props => {
               contentContainerStyle={{}}
               renderItem={({item})=>
                 <TouchableOpacity
-                  onPress={props.close}
+                  onPress={item.parthner === '김용희' ? '' : props.close}
+                  style={item.parthner === '김용희' ? {backgroundColor:'#f2f2f2'} : ''}
                 >
                   <View style={styles.couponItem}>
                       <View>
-                          <View style={styles.couponImg}>
+                          <View style={item.parthner === '김용희' ? styles.notCouponImg : styles.couponImg}>
                               <View style={styles.couponImgInner}>
                                   <Text style={{fontSize:18,fontWeight:'bold'}}>{item.price}</Text>
                                   <Text style={{fontSize:11}}>할인쿠폰</Text>
@@ -115,7 +86,7 @@ const CouponModal = props => {
                       <View style={styles.couponCont}>
                           <Text style={{fontSize:14,marginBottom:5}}>{item.couponTitle}</Text>
                           <Text style={{color:'#888',marginBottom:3,fontSize:11}}>{item.date} 까지 사용가능</Text>
-                          <Text style={{fontSize:11}}>사용가능대상: {item.category}</Text>
+                          <Text style={{fontSize:11}}>- <Text style={{color:'#01a1dd'}}>{item.parthner}</Text>기사님 전용 할인쿠폰</Text>
                       </View>
                   </View>
                 </TouchableOpacity>
@@ -495,23 +466,32 @@ const styles = StyleSheet.create({
 },
 
 couponImg:{
-    backgroundColor:'#01a1dd',
-    justifyContent:'center',
-    alignItems:'flex-start',
-    width:100,
-    height:54,
-    borderRadius:5,
+  backgroundColor:'#01a1dd',
+  justifyContent:'center',
+  alignItems:'flex-start',
+  width:100,
+  height:54,
+  borderRadius:5,
+},
+
+notCouponImg:{
+  backgroundColor:'#c2c2c2',
+  justifyContent:'center',
+  alignItems:'flex-start',
+  width:100,
+  height:54,
+  borderRadius:5,
 },
 
 couponImgInner:{
-    width:80,
-    height:50,
-    marginLeft:2,
-    borderRadius:5,
-    backgroundColor:'#fff',
-    padding:10,
-    justifyContent:'center',
-    alignItems:'center'
+  width:80,
+  height:50,
+  marginLeft:2,
+  borderRadius:5,
+  backgroundColor:'#fff',
+  padding:10,
+  justifyContent:'center',
+  alignItems:'center'
 },
 
 couponCont:{

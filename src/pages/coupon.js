@@ -72,7 +72,7 @@ export default class Coupon extends React.Component{
                                 <View style={styles.couponCont}>
                                     <Text style={{fontSize:16,marginBottom:5}}>{item.couponTitle}</Text>
                                     <Text style={{color:'#888',marginBottom:5,fontSize:13}}>{item.date} 까지 사용가능</Text>
-                                    <Text style={{fontSize:13,}}>- <Text style={{color:'#01a1dd'}}>{item.parthner}</Text>기사 전용 할인쿠폰</Text>
+                                    <Text style={{fontSize:13,}}>- <Text style={{color:'#01a1dd'}}>{item.parthner}</Text>기사님 전용 할인쿠폰</Text>
                                 </View>
                             </View>
                         }
