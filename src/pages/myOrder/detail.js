@@ -137,6 +137,25 @@ export default props => {
                         </View>
                         <View style={[styles.boxItem]}>
                             <View  style={styles.contRow}>
+                                <Text style={{color:'#494949'}}>추가결제요청</Text>
+                                <Text style={{color:'#888'}}>2020.05.20 11:34</Text>
+                            </View>
+                            <View style={styles.divider}/>
+                            <View style={{flex:1,alignItems:'center'}}>
+                                <Text style={{flex:1,marginBottom:15}}>맡기신 세탁물에 <Text style={{color:'#01a1dd'}}>추가결제</Text> 요청이 있습니다</Text>
+                                <TouchableOpacity
+                                    onPress={()=>{props.navigation.navigate('receiptView')}}
+                                    style={{paddingHorizontal:20,height:34,borderRadius:5,justifyContent:'center',alignItems:'center',backgroundColor:'#292929'}}
+                                >
+                                    <Text style={{color:'#fff'}}>자세한 내용 확인하기</Text>
+                                </TouchableOpacity>
+                            </View>
+                            <Text style={{fontSize:12,color:'#888',marginTop:15}}>
+                                ※ 추가결제금에 대한 결제가 이루어지지 않는다면 세탁물은 발송되지 않습니다.
+                            </Text>
+                        </View>
+                        <View style={[styles.boxItem]}>
+                            <View  style={styles.contRow}>
                                 <Text style={{color:'#494949'}}>주문취소</Text>
                                 <Text style={{color:'#888'}}>2020.05.20 12:10</Text>
                             </View>                            
@@ -216,7 +235,7 @@ export default props => {
 
                         <View style={{flexDirection:'row',justifyContent:'flex-end',alignItems:'center'}}>
                             <TouchableOpacity
-                                style={{height:34,backgroundColor:'#494949',borderRadius:5,justifyContent:'center',alignItems:'center',paddingHorizontal:20}}
+                                style={{height:34,backgroundColor:'#292929',borderRadius:5,justifyContent:'center',alignItems:'center',paddingHorizontal:20}}
                                 onPress={()=>setOrderCancle(true)}
                             >
                                 <Text style={{color:'#fff'}}>주문취소</Text>
@@ -250,6 +269,7 @@ export default props => {
                         </View>   
                     </View>
                 </View>
+
 
                 <View style={styles.section}>
                     <View style={styles.sectionTitle}>

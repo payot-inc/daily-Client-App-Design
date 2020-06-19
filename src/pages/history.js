@@ -3,7 +3,6 @@ import {View, Text, TouchableOpacity, FlatList, Image, StyleSheet} from 'react-n
 import Icon from 'react-native-vector-icons/MaterialCommunityIcons';
 import faker from 'faker';
 import ImageView from '../components/imageView';
-import ReceiptModal from '../components/receiptModal';
 
 export default props => {
 
@@ -71,7 +70,10 @@ export default props => {
               <Text style={{color:'#01a1dd',fontSize:12}}>{item.date}</Text>
               <Text style={{marginTop:3,fontSize:14,}}>{item.text}</Text>
               { item.receipt ? 
-              <TouchableOpacity style={styles.receiptBtn} onPress={()=>setReceiptModal(true)}>
+              <TouchableOpacity 
+                style={styles.receiptBtn} 
+                onPress={()=> {props.navigation.navigate('receiptView')}}
+              >
                 <Icon name="receipt" size={20} color={'#01a1dd'}></Icon>
                 <Text style={{marginLeft:10}}>인수증 확인하기</Text>
               </TouchableOpacity> : null }
@@ -109,10 +111,7 @@ export default props => {
         close={()=>setImageView(false)}
       />
 
-      <ReceiptModal
-        visible={receiptModal}
-        close={()=>setReceiptModal(false)}
-      />
+
     </View>
   )
 }

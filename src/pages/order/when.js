@@ -4,7 +4,6 @@ import Carousel from 'react-native-snap-carousel';
 import Icon from 'react-native-vector-icons/FontAwesome5';
 import faker from 'faker';
 
-
 const GuideModal = props => {
     const screenWidth = Dimensions.get('window').width;
     return(

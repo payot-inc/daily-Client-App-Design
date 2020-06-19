@@ -1,12 +1,46 @@
-import React,{useEffect, useState} from 'react';
-import {View, Text, StyleSheet, ScrollView, StatusBar, Image, TouchableHighlight, TouchableOpacity, Dimensions, Animated, } from 'react-native';
+import React,{useState} from 'react';
+import {View, Text, StyleSheet, ScrollView, StatusBar, Image, TouchableHighlight, TouchableOpacity, Dimensions, Modal, } from 'react-native';
 import {DrawerActions} from 'react-navigation-drawer';
 import Icon from 'react-native-vector-icons/MaterialCommunityIcons';
 import MainVisual from '../components/mainVisual';
 import Carousel from 'react-native-snap-carousel';
 
-export default props => {
-    
+
+const HomeMassage = props => {
+    return(
+        <Modal
+            visible={props.visible}
+            transparent={true}
+            animationType={'fade'}
+            onRequestClose={props.close}
+        >
+            <View style={{flex:1,justifyContent:'center',alignItems:'center'}}>
+                <View style={{padding:30,backgroundColor:'#fff',justifyContent:'center',alignItems:'center',borderRadius:10,zIndex:3,}}>
+                    <Icon name="alert-circle-outline" size={60} style={{marginBottom:15,color:'#01a1dd'}}/>
+                    <Text style={{fontSize:18}}>맡기신 <Text style={{color:'#01a1dd',fontWeight:'bold'}}>세탁물</Text>에</Text>
+                    <Text style={{fontSize:18}}>추가결제 요청이 있습니다</Text>
+                    <View style={{justifyContent:'center',alignItems:'center',marginTop:15,}}>
+                        <TouchableOpacity 
+                            onPress={props.goTo}
+                            style={{paddingHorizontal:20,height:40,borderRadius:20,backgroundColor:'#292929',justifyContent:'center',alignItems:'center'}}>
+                            <Text style={{color:'#fff'}}>자세한내용 확인하기</Text>
+                        </TouchableOpacity>
+                    </View>
+                </View>
+                
+            </View>
+
+            <TouchableOpacity
+                onPress={props.close}
+                activeOpacity={1}
+                style={{flex:1,backgroundColor:'rgba(0,0,0,0.8)',position:'absolute',zIndex:1,width:'100%',height:'100%',zIndex:2}}
+            >
+            </TouchableOpacity>
+        </Modal>
+    )
+}
+
+export default props => {    
 
     const guideData = [
         {
@@ -30,14 +64,16 @@ export default props => {
     // }, []);
 
     const [headerLineVisible, setHeaderLineVisible] = useState(false);
+    const [homeMassage, setHomeMassage] = useState(true);
 
     return (
         
         <View 
             style={styles.container}
         >
-
             <StatusBar backgroundColor={'#fff'}/>
+
+            <HomeMassage visible={homeMassage} close={()=>setHomeMassage(false)} goTo={()=> {props.navigation.navigate('receiptView')}}/>
 
             <View style={[styles.header]}>
                 { headerLineVisible ? <View  style={{ width: '100%', height: 1, backgroundColor: '#e2e2e2', position:'absolute',bottom:0,left:0, zIndex:99 }} /> : null }
@@ -251,8 +287,10 @@ export default props => {
         </View>
         
     );
-  
 }
+
+
+
 
 const styles = StyleSheet.create({
 

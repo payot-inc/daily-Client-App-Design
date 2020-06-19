@@ -9,6 +9,7 @@ import FirstUser from './pages/firstUser/firstUserStack'
 import NoticeStack from './pages/notice/noticeStack';
 import History from './pages/history';
 import ErrorView from './pages/error';
+import ReceiptView from './pages/receipt';
 
 const MainStoryBorad = createStackNavigator(
   {
@@ -38,6 +39,12 @@ const MainStoryBorad = createStackNavigator(
     },
     errorView:{
       screen:ErrorView,
+      navigationOptions: () => ({
+        header: null,
+      }),
+    },
+    receiptView:{
+      screen:ReceiptView,
       navigationOptions: () => ({
         header: null,
       }),
