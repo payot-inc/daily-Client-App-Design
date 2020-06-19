@@ -247,70 +247,54 @@ export default props => {
 
                 <View style={styles.section}>
                     <View style={styles.sectionTitle}>
-                        <Text style={styles.sectionTitleText}>선택한 상품</Text>
+                        <Text style={styles.sectionTitleText}>상품정보</Text>
                     </View>
                     <View style={styles.sectionCont}>
-                        <View style={styles.contRow}>
-                            <View>
-                                <Text styles={styles.productItemName}>생활빨래 80리터</Text>
-                                <Text style={{color:'#888'}}>1개 x 19,800원</Text>
-                            </View>
-                            <Text style={{fontSize:14,}}>19,800원</Text>
+                        <View style={{marginBottom:10,justifyContent:'space-around'}}>
+                            <Text style={{color:'#494949',zIndex:2,fontSize:16,}}>고객님이 주문한 상품</Text>
+                        </View>
+
+                        <View style={{flexDirection:'row',justifyContent:'space-around',alignItems:'center',backgroundColor:'#f8f8f8',padding:5,marginBottom:5,}}>
+                            <Text style={{flex:1,fontSize:12}}>생활빨래 80리터</Text>
+                            <Text style={{width:30,fontSize:12}}>1개</Text>
+                            <Text style={{width:60,textAlign:'right',fontSize:12}}>19,800원</Text>
+                        </View>
+                        <View style={{flexDirection:'row',justifyContent:'space-around',alignItems:'center',backgroundColor:'#f8f8f8',padding:5,marginBottom:5,}}>
+                            <Text style={{flex:1,fontSize:12}}>와이셔츠</Text>
+                            <Text style={{width:30,fontSize:12}}>3개</Text>
+                            <Text style={{width:60,textAlign:'right',fontSize:12}}>4,500원</Text>
                         </View>
                 
-                        <View style={styles.divider}/>
-            
-                        <View style={styles.contRow}>
-                            <View>
-                                <Text styles={styles.productItemName}>와이셔츠</Text>
-                                <Text style={{color:'#888'}}>2개 x 3,000원</Text>
-                            </View>
-                            <Text style={{fontSize:14,}}>19,800원</Text>
-                        </View>   
-                    </View>
-                </View>
-
-
-                <View style={styles.section}>
-                    <View style={styles.sectionTitle}>
-                        <Text style={styles.sectionTitleText}>검수된 상품</Text>
-                    </View>
-                    <View style={styles.sectionCont}>
-                        <View>
-                            <View style={styles.contRow}>
-                                <View>
-                                    <Text styles={styles.productItemName}>생활빨래 80리터</Text>
-                                    <Text style={{color:'#888'}}>1개 x 19,800원</Text>
-                                </View>
-                                <Text style={{fontSize:14,}}>19,800원</Text>
-                            </View>
+                        <View style={{height:1,backgroundColor:'#e2e2e2',marginVertical:30,}}/>
+                        
+                        <View style={{marginBottom:10,justifyContent:'space-around'}}>
+                            <Text style={{color:'#494949',zIndex:2,fontSize:16,}}>검수완료된 품목</Text>
                         </View>
-                
-                        <View style={styles.divider}/>
-            
-                        <View>
-                            <View style={styles.contRow}>
-                                <View>
-                                    <Text styles={styles.productItemName}>와이셔츠</Text>
-                                    <Text style={{color:'#888'}}>2개 x 3,000원</Text>
-                                </View>
-                                <Text style={{fontSize:14,}}>19,800원</Text>
-                            </View>
-                            <Text style={{fontSize:11,marginTop:10,color:'#D20A61',padding:5,backgroundColor:'#FBEEF3'}}>- 수량이 변경되었습니다</Text>
+                        <View style={{flexDirection:'row',justifyContent:'space-around',alignItems:'center',backgroundColor:'#EFF4F6',padding:5,marginBottom:5,}}>
+                            <Text style={{width:70,color:'#01a1dd',fontSize:12}}>변경없음</Text>
+                            <Text style={{flex:1,fontSize:12}}>생활빨래 80리터</Text>
+                            <Text style={{width:30,fontSize:12}}>1개</Text>
+                            <Text style={{width:60,textAlign:'right',fontSize:12}}>19,800원</Text>
+                        </View>
+                        <View style={{flexDirection:'row',justifyContent:'space-around',alignItems:'center',backgroundColor:'#EFF4F6',padding:5,marginBottom:5,}}>
+                            <Text style={{width:70,color:'#d22828',fontSize:12}}>수량변경</Text>
+                            <Text style={{flex:1,fontSize:12}}>와이셔츠</Text>
+                            <Text style={{width:30,fontSize:12,color:'#d22828'}}>4개</Text>
+                            <Text style={{width:60,textAlign:'right',fontSize:12,color:'#d22828'}}>6,000원</Text>
                         </View>
 
-                        <View style={styles.divider}/>
-                        <View>
-                            <View style={styles.contRow}>
-                                <View>
-                                    <Text styles={styles.productItemName}>청바지</Text>
-                                    <Text style={{color:'#888'}}>1개 x 4,000원</Text>
-                                </View>
-                                <Text style={{fontSize:14,}}>4,000원</Text>
-                            </View>
-                            <Text style={{fontSize:11,marginTop:10,color:'#D20A61',padding:5,backgroundColor:'#FBEEF3'}}>- 상품이 추가되었습니다</Text>
+
+                        <View style={{height:1,backgroundColor:'#e2e2e2',marginVertical:30,}}/>
+
+                    
+                        <View style={{marginBottom:10,justifyContent:'space-around'}}>
+                            <Text style={{color:'#494949',zIndex:2,fontSize:16,}}>추가 세탁금액</Text>
                         </View>
-                    </View>
+                        <View>
+                            <Text style={{marginBottom:10,color:'#888',fontSize:12,}}>와이셔츠에 심각한 오염이 있어 고급세탁을 진행하였습니다</Text>
+                            <Text style={{textAlign:'right',color:'#d22828'}}>3,000원</Text>
+                        </View>
+                    </View>                    
                 </View>
 
                 <View style={styles.section}>
@@ -324,8 +308,12 @@ export default props => {
                                 <Text>29,800원</Text>
                             </View>
                             <View style={[styles.contRow,{marginBottom:10,}]}>
-                                <Text style={{color:'#888'}}>검수 후 추가</Text>
-                                <Text>4,500원</Text>
+                                <Text style={{color:'#888'}}>검수 후 추가금액</Text>
+                                <Text>3,000원</Text>
+                            </View>
+                            <View style={[styles.contRow,{marginBottom:10,}]}>
+                                <Text style={{color:'#888'}}>추가 세탁금액</Text>
+                                <Text>3,000원</Text>
                             </View>
                             <View style={[styles.contRow,{marginBottom:10,}]}>
                                 <Text style={{color:'#888'}}>배송비</Text>

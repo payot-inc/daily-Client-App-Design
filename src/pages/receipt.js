@@ -109,13 +109,15 @@ export default props => {
             <Text style={{color:'#D20A61',fontWeight:'bold'}}>12,000원</Text>
           </View>
         </View>
-        <TouchableOpacity
+        
+      </ScrollView>
+
+      <TouchableOpacity
           onPress={()=>setConfirm(true)}
           style={{height:50,backgroundColor:'#D20A61',justifyContent:'center',alignItems:'center'}}
         >
           <Text style={{color:'#fff'}}><Text style={{fontWeight:'bold'}}>12,000원</Text> 추가금 결제하기</Text>
         </TouchableOpacity>
-      </ScrollView>
 
       
     </View>

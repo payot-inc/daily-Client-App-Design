@@ -14,16 +14,19 @@ const HomeMassage = props => {
             animationType={'fade'}
             onRequestClose={props.close}
         >
-            <View style={{flex:1,justifyContent:'center',alignItems:'center'}}>
-                <View style={{padding:30,backgroundColor:'#fff',justifyContent:'center',alignItems:'center',borderRadius:10,zIndex:3,}}>
-                    <Icon name="alert-circle-outline" size={60} style={{marginBottom:15,color:'#01a1dd'}}/>
-                    <Text style={{fontSize:18}}>맡기신 <Text style={{color:'#01a1dd',fontWeight:'bold'}}>세탁물</Text>에</Text>
-                    <Text style={{fontSize:18}}>추가결제 요청이 있습니다</Text>
-                    <View style={{justifyContent:'center',alignItems:'center',marginTop:15,}}>
+            <View style={{flex:1,justifyContent:'center',alignItems:'center',padding:30,}}>
+                <View style={{width:'100%',backgroundColor:'#fff',justifyContent:'center',alignItems:'center',borderRadius:10,zIndex:3,overflow:'hidden'}}>
+                    <View style={{width:'100%',justifyContent:'center',alignItems:'center',backgroundColor:'#fff',padding:20,}}>
+                        <Icon name="alert-circle-outline" size={80} style={{marginBottom:15,color:'#D20A61'}}/>
+                        <Text style={{fontSize:18,color:'#292929'}}>맡기신 세탁물에</Text>
+                        <Text style={{fontSize:18,color:'#292929'}}><Text style={{color:'#D20A61',fontWeight:'bold'}}>추가결제</Text> 요청이 있습니다</Text>
+                    </View>
+                    <View style={{justifyContent:'center',alignItems:'center',width:'100%',}}>
                         <TouchableOpacity 
                             onPress={props.goTo}
-                            style={{paddingHorizontal:20,height:40,borderRadius:20,backgroundColor:'#292929',justifyContent:'center',alignItems:'center'}}>
+                            style={{width:'100%',height:50,backgroundColor:'#D20A61',justifyContent:'center',alignItems:'center',flexDirection:'row'}}>
                             <Text style={{color:'#fff'}}>자세한내용 확인하기</Text>
+                            <Icon name="chevron-right" color={'#fff'} size={18} style={{marginLeft:5}}/>
                         </TouchableOpacity>
                     </View>
                 </View>
@@ -145,15 +148,24 @@ export default props => {
 
                 
                 <View style={styles.inner}>
-                    <View style={styles.stateMessage}>
+                    <TouchableOpacity
+                        onPress={()=>{props.navigation.navigate('receiptView')}}
+                        style={[styles.stateMessage,{paddingVertical:15}]}
+                    >
                         <View style={{flexDirection:'row',alignItems:'center'}}>
                             <View style={{alignItems:'center',borderRightWidth:1,borderColor:'#e2e2e2',paddingRight:15,}}>                                
-                                <Text style={{color:'#292929',fontSize:22,fontWeight:'bold'}}>05.19</Text>
-                                <Text style={{fontSize:14,color:'#888'}}>알림</Text>
+                                <Text style={{color:'#292929',fontSize:18,fontWeight:'bold'}}>05.19</Text>
+                                <Text style={{fontSize:12,color:'#888'}}>18:34</Text>
                             </View>
-                            <Text style={{fontSize:16,flex:1,marginLeft:15,}}>최근 주문건은 현재 <Text style={styles.textPoint}>배송중</Text>입니다</Text>
+                            <View style={{flex:1,paddingHorizontal:15}}>
+                                <Text style={{fontSize:14}}>맡기신 세탁물에 <Text style={{color:'#D20A61',fontWeight:'bold'}}>추가결제</Text> 요청이 있습니다</Text>
+                                <View style={{flexDirection:'row',alignItems:'center',marginTop:3}}>
+                                    <Text style={{fontSize:12,color:'#888'}}>자세한 내용 확인하기</Text>
+                                    <Icon name="chevron-right" size={12} color={'#c2c2c2'}></Icon>
+                                </View>
+                            </View>
                         </View>
-                    </View>
+                    </TouchableOpacity>
 
                     <View style={styles.quickBtns}>
                         <View style={[styles.quickBtnWrap,{marginRight:5}]}>
