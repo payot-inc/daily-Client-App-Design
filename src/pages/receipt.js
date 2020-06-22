@@ -1,11 +1,63 @@
 import React,{useState} from 'react';
-import {View, Text, TouchableOpacity, Image, ScrollView, FlatList} from 'react-native';
+import {View, Text, TouchableOpacity, Image, ScrollView, Dimensions,TouchableHighlight} from 'react-native';
+import Carousel from 'react-native-snap-carousel';
 import Confirm from '../components/confirm';
 import Icon from 'react-native-vector-icons/MaterialCommunityIcons';
+import SubHeader from '../components/subHeader';
+
+const CardItem = ({item, index, cardHandle}) => {
+  return(
+    <TouchableHighlight
+      onPress={() => cardHandle(index)}
+      style={{overflow:'hidden',borderRadius:10,}}
+    >
+      <View style={[{height:110,width:200,justifyContent:'space-around',padding:10,flexDirection:'row'}, item.active ? {backgroundColor:'#1E1FE8'} : {backgroundColor:'#888'}]}>
+        <View style={{flex:1,flexDirection:'row',justifyContent:'space-between',}}>
+          <View style={{flex:1,}}>
+            {item.active === true ? <Icon name="check-circle-outline" color={'#FFCC00'} size={24} style={{marginBottom:5}}/> : null }
+            <Text style={{fontSize:14,color:'#fff'}}>{item.cardName}</Text>
+            <Text style={{color:'#c2c2c2',fontSize:12,marginTop:3,}}>{item.name}</Text>
+          </View>
+          <View style={{justifyContent:'flex-end',width:80}}>
+            <Text style={{fontSize:24,textAlign:'right',color:'#fff'}}>{item.cardLastNumber}</Text>
+          </View>
+        </View>
+      </View>
+    </TouchableHighlight>
+  )
+}
 
 export default props => {
 
   const [confirm, setConfirm]  = useState(false)
+  const [cards, setCards] = useState(cardData);
+
+  const sliderWidth = Dimensions.get('window').width;
+
+  const cardHandle = index => {
+    const cardItems = cards.map((item, i) => {
+      item.active = index === i;
+      return item;
+    });
+    setCards(cardItems);
+  }
+
+
+  const cardData = [
+    {
+      active:true,
+      cardName:'신한카드',
+      name:'러브카드',
+      cardLastNumber:'9972',
+    },
+    {
+      active:false,
+      cardName:'부산은행',
+      name:'부산은행 체크카드',
+      cardLastNumber:'3825',
+    }
+  ];
+
 
   return(
     <View style={{flex:1,}}>
@@ -15,37 +67,29 @@ export default props => {
         visible={confirm}
         close={()=>setConfirm(false)}
       />
-
-      <View style={{padding:30,paddingBottom:0,}}>
-        <TouchableOpacity
-          onPress={()=>{props.navigation.goBack(null)}}
-          style={{position:'absolute',left:20,top:20,width:40,height:40,justifyContent:'center',alignItems:'center',backgroundColor:'#f2f2f2',zIndex:99,borderRadius:20}}
-        >
-          <Icon name="arrow-left" size={30} color={'#d2d2d2'}></Icon>
-        </TouchableOpacity>
-
-        <View style={{justifyContent:'center',alignItems:'center'}}>
-          <Image source={require('../assets/img/logo_v_blue.png')} style={{resizeMode:'contain',height:100}}/>
-          <Text style={{marginTop:10,fontSize:12,color:'#888',textAlign:'center'}}>데일리세탁 부산 금정구</Text>
-        </View>
-
-        <View style={{flexDirection:'row',borderTopWidth:1,borderBottomWidth:1,borderColor:'#e2e2e2',marginTop:20,paddingVertical:10,}}>
-          <View style={{flex:1,justifyContent:'space-between',borderRightWidth:1,paddingRight:10,borderColor:'#e2e2e2'}}>
-            <Text style={{fontSize:10,color:'#888'}}>RECEIPT NO:</Text>
-            <Text style={{textAlign:'right',marginTop:5,fontSize:13,}}> 0809</Text>
-          </View>
-          <View style={{flex:1,justifyContent:'space-between',marginHorizontal:10}}>
-            <Text style={{fontSize:10,color:'#888'}}>DATE:</Text>
-            <Text style={{textAlign:'right',marginTop:5,fontSize:13,}}>12/06/2020</Text>
-          </View>
-          <View style={{flex:1,justifyContent:'space-between',borderLeftWidth:1,paddingLeft:10,borderColor:'#e2e2e2'}}>
-            <Text style={{fontSize:10,color:'#888'}}>STAFF:</Text>
-            <Text style={{textAlign:'right',marginTop:5,fontSize:13,}}>김지민</Text>
-          </View>
-        </View>
-      </View>
-
+      <SubHeader navigation={props.navigation}/>
       <ScrollView>
+        <View style={{padding:30,paddingBottom:0,}}>
+          <View style={{justifyContent:'center',alignItems:'center'}}>
+            <Image source={require('../assets/img/logo_v_blue.png')} style={{resizeMode:'contain',height:100}}/>
+            <Text style={{marginTop:10,fontSize:12,color:'#888',textAlign:'center'}}>데일리세탁 부산 금정구</Text>
+          </View>
+
+          <View style={{flexDirection:'row',borderTopWidth:1,borderBottomWidth:1,borderColor:'#e2e2e2',marginTop:20,paddingVertical:10,}}>
+            <View style={{flex:1,justifyContent:'space-between',borderRightWidth:1,paddingRight:10,borderColor:'#e2e2e2'}}>
+              <Text style={{fontSize:10,color:'#888'}}>RECEIPT NO:</Text>
+              <Text style={{textAlign:'right',marginTop:5,fontSize:13,}}> 0809</Text>
+            </View>
+            <View style={{flex:1,justifyContent:'space-between',marginHorizontal:10}}>
+              <Text style={{fontSize:10,color:'#888'}}>DATE:</Text>
+              <Text style={{textAlign:'right',marginTop:5,fontSize:13,}}>12/06/2020</Text>
+            </View>
+            <View style={{flex:1,justifyContent:'space-between',borderLeftWidth:1,paddingLeft:10,borderColor:'#e2e2e2'}}>
+              <Text style={{fontSize:10,color:'#888'}}>STAFF:</Text>
+              <Text style={{textAlign:'right',marginTop:5,fontSize:13,}}>김지민</Text>
+            </View>
+          </View>
+        </View>
 
         <View style={{paddingHorizontal:20,paddingVertical:30,}}>
           <View style={{marginBottom:10,justifyContent:'space-around'}}>
@@ -92,6 +136,23 @@ export default props => {
             <Text style={{marginBottom:10,color:'#888',fontSize:12,}}>와이셔츠에 심각한 오염이 있어 고급세탁을 진행하였습니다</Text>
             <Text style={{textAlign:'right',color:'#d22828'}}>3,000원</Text>
           </View>
+        </View>
+
+        <View style={{borderTopWidth:1,borderColor:'#e2e2e2',paddingHorizontal:20,paddingVertical:30,}}>
+          <Text style={{marginBottom:20,color:'#494949',zIndex:2,fontSize:16,}}>결제카드 선택</Text>
+          <Carousel
+            data={cardData}
+            itemWidth={200}
+            sliderWidth={sliderWidth}
+            activeSlideAlignment={'start'}
+            slideStyle={{marginRight:10}}
+            inactiveSlideScale={1}
+            inactiveSlideOpacity={1}
+            layoutCardOffset={10}
+            renderItem={({item, index})=> 
+              <CardItem item={item} index={index} cardHandle={cardHandle}/>
+            }
+          />
         </View>
 
         <View style={{paddingHorizontal:20,paddingVertical:30,backgroundColor:'#F9EEF3'}}>

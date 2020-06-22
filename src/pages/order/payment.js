@@ -9,7 +9,6 @@ import AgrmtModal from '../../components/agrmtModal';
 
 
 const CardItem = ({item, index, cardHandle}) => {
-
   return(
     <TouchableHighlight
       onPress={() => cardHandle(index)}
