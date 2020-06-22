@@ -3,7 +3,7 @@ import {View, Text, Picker, TouchableHighlight, StyleSheet, FlatList,TouchableOp
 import Icon from 'react-native-vector-icons/MaterialCommunityIcons';
 import numeral from 'numeral';
 import SubHeader from '../../components/subHeader';
-import Skeleton from 'react-native-skeleton-placeholder';
+import SkeletonView from '../../components/skeleton';
 
 export default props => {
 
@@ -132,16 +132,7 @@ export default props => {
             }
 
             CellRendererComponent={()=>
-              <Skeleton backgroundColor={'#f2f2f2'} highlightColor={'#e2e2e2'}>
-                <View style={{padding:20,flexDirection:'row',borderWidth:1,borderColor:'#e2e2e2',borderRadius:5,marginBottom:15}}>
-                  <View style={{width:80,height:80,borderRadius:5}}></View>
-                  <View style={{flex:1,marginLeft:15,justifyContent:'center'}}>
-                    <View style={{height:20,borderRadius:5,marginBottom:10}} />
-                    <View style={{width:'50%',height:20,borderRadius:5,marginBottom:10}} />
-                    <View style={{width:'70%',height:20,borderRadius:5}} />
-                  </View>
-                </View>
-              </Skeleton>
+              <SkeletonView />
             }
           >
           </FlatList>
