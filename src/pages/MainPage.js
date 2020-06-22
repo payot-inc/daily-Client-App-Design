@@ -150,12 +150,31 @@ export default props => {
                 <View style={styles.inner}>
                     <TouchableOpacity
                         onPress={()=>{props.navigation.navigate('receiptView')}}
-                        style={[styles.stateMessage,{paddingVertical:15}]}
+                        style={[styles.stateMessage,{paddingVertical:15,marginBottom:10}]}
                     >
                         <View style={{flexDirection:'row',alignItems:'center'}}>
                             <View style={{alignItems:'center',borderRightWidth:1,borderColor:'#e2e2e2',paddingRight:15,}}>                                
                                 <Text style={{color:'#292929',fontSize:18,fontWeight:'bold'}}>05.19</Text>
                                 <Text style={{fontSize:12,color:'#888'}}>18:34</Text>
+                            </View>
+                            <View style={{flex:1,paddingHorizontal:15}}>
+                                <Text style={{fontSize:14}}>맡기신 세탁물에 <Text style={{color:'#D20A61',fontWeight:'bold'}}>추가결제</Text> 요청이 있습니다</Text>
+                                <View style={{flexDirection:'row',alignItems:'center',marginTop:3}}>
+                                    <Text style={{fontSize:12,color:'#888'}}>자세한 내용 확인하기</Text>
+                                    <Icon name="chevron-right" size={12} color={'#c2c2c2'}></Icon>
+                                </View>
+                            </View>
+                        </View>
+                    </TouchableOpacity>
+
+                    <TouchableOpacity
+                        onPress={()=>{props.navigation.navigate('receiptView')}}
+                        style={[styles.stateMessage,{paddingVertical:15}]}
+                    >
+                        <View style={{flexDirection:'row',alignItems:'center'}}>
+                            <View style={{alignItems:'center',borderRightWidth:1,borderColor:'#e2e2e2',paddingRight:15,}}>                                
+                                <Text style={{color:'#292929',fontSize:18,fontWeight:'bold'}}>05.17</Text>
+                                <Text style={{fontSize:12,color:'#888'}}>14:24</Text>
                             </View>
                             <View style={{flex:1,paddingHorizontal:15}}>
                                 <Text style={{fontSize:14}}>맡기신 세탁물에 <Text style={{color:'#D20A61',fontWeight:'bold'}}>추가결제</Text> 요청이 있습니다</Text>
