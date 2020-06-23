@@ -8,23 +8,23 @@ import SkeletonView from '../../components/skeleton';
 export default props => {
 
   const Data = [
-    {
-        date:'20.05.25',
-        favorite:true,
-        addressTitle:'우리집',
-        address: '부산광역시 구남언덕로 15 3층',
-        doorPW:'#1338',
-        amount: 145800,
-        isCancel:'45'
-    },
-    {
-        date:'20.05.19',
-        favorite:false,
-        addressTitle:'회사',
-        address: '부산광역시 금정구 부산대학로 63번길 2, 과학기술연구동 201호',
-        doorPW:'#1338',
-        amount: 32000
-    }
+    // {
+    //     date:'20.05.25',
+    //     favorite:true,
+    //     addressTitle:'우리집',
+    //     address: '부산광역시 구남언덕로 15 3층',
+    //     doorPW:'#1338',
+    //     amount: 145800,
+    //     isCancel:'45'
+    // },
+    // {
+    //     date:'20.05.19',
+    //     favorite:false,
+    //     addressTitle:'회사',
+    //     address: '부산광역시 금정구 부산대학로 63번길 2, 과학기술연구동 201호',
+    //     doorPW:'#1338',
+    //     amount: 32000
+    // }
   ]
 
   return(
@@ -32,13 +32,13 @@ export default props => {
         <SubHeader navigation={props.navigation} title={'이용내역'} />
 
         
-        <View style={styles.dateSelect}>
+        {/* <View style={styles.dateSelect}>
             <TouchableOpacity
               style={styles.dateSelectBtn}
             >
                 <Text style={styles.dateSelectText}>2020년 05월</Text>
             </TouchableOpacity>
-        </View>
+        </View> */}
 
         
 
@@ -159,7 +159,7 @@ const styles = StyleSheet.create({
     fontSize:18,
   },
   emptyItem:{
-    padding:20,
+    padding:30,
     alignItems:'center',
     borderWidth:1,
     borderColor:'#e2e2e2',
@@ -167,7 +167,6 @@ const styles = StyleSheet.create({
   },
   emptyItemText:{
     color:'#494949',
-    marginTop:10,
     fontSize:16,
   },
   emptyItemBtn:{

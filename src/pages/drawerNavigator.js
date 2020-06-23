@@ -13,6 +13,7 @@ import MyInfo from './myInfo';
 import CustomDrawer from '../components/customDrawer';
 import Option from '../pages/option';
 import Guide from './guide';
+import Notice from './notice/noticeStack';
 
 export default DrawerNavigator = createDrawerNavigator(
   {
@@ -90,6 +91,17 @@ export default DrawerNavigator = createDrawerNavigator(
         ),
         drawerIcon: () => (
           <Icon name={'account'} size={18} color={'#9a9a9a'}/>
+        )
+      }),
+    },
+    notice: {
+      screen: Notice,
+      navigationOptions: () => ({
+        drawerLabel: () => (
+          <Text style={{fontSize:15}}>공지사항</Text>
+        ),
+        drawerIcon: () => (
+          <Icon name={'desktop-mac'} size={18} color={'#9a9a9a'}/>
         )
       }),
     },

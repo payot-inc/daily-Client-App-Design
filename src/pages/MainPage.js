@@ -242,7 +242,10 @@ export default props => {
                             <Text style={styles.noticeTitleText}>공지사항</Text>
                         </View>
                         <View style={styles.noticeList}>
-                            <View style={styles.noticeItem}>
+                            <TouchableOpacity 
+                                style={styles.noticeItem}
+                                onPress={()=> {props.navigation.navigate('notice')}}
+                            >
                                 <View style={{flex:1,flexDirection:'row',alignItems:'center'}}>
                                     <Icon name="alpha-n-box" size={20} color={'#D20A61'} style={{marginRight:5,}}></Icon>
                                     <Text style={styles.noticeItemText}>서버점검 안내</Text>
@@ -250,8 +253,11 @@ export default props => {
                                 <Text style={styles.noticeItemDate}>
                                     20.05.19
                                 </Text>
-                            </View>
-                            <View style={styles.noticeItem}>
+                            </TouchableOpacity>
+                            <TouchableOpacity 
+                                style={styles.noticeItem}
+                                onPress={()=> {props.navigation.navigate('notice')}}
+                            >
                                 <View style={{flex:1,flexDirection:'row',alignItems:'center'}}>
                                     <Icon name="alpha-n-box" size={20} color={'#D20A61'} style={{marginRight:5,}}></Icon>
                                     <Text style={styles.noticeItemText}>서버점검 안내</Text>
@@ -259,7 +265,7 @@ export default props => {
                                 <Text style={styles.noticeItemDate}>
                                     20.05.19
                                 </Text>
-                            </View>
+                            </TouchableOpacity>
                         </View>
                     </View>
                 </View>

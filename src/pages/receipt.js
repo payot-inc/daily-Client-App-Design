@@ -29,20 +29,6 @@ const CardItem = ({item, index, cardHandle}) => {
 
 export default props => {
 
-  const [confirm, setConfirm]  = useState(false)
-  const [cards, setCards] = useState(cardData);
-
-  const sliderWidth = Dimensions.get('window').width;
-
-  const cardHandle = index => {
-    const cardItems = cards.map((item, i) => {
-      item.active = index === i;
-      return item;
-    });
-    setCards(cardItems);
-  }
-
-
   const cardData = [
     {
       active:true,
@@ -57,6 +43,19 @@ export default props => {
       cardLastNumber:'3825',
     }
   ];
+
+  const [confirm, setConfirm]  = useState(false)
+  const [cards, setCards] = useState(cardData);
+
+  const sliderWidth = Dimensions.get('window').width;
+
+  const cardHandle = index => {
+    const cardItems = cards.map((item, i) => {
+      item.active = index === i;
+      return item;
+    });
+    setCards(cardItems);
+  }
 
 
   return(
@@ -141,7 +140,7 @@ export default props => {
         <View style={{borderTopWidth:1,borderColor:'#e2e2e2',paddingHorizontal:20,paddingVertical:30,}}>
           <Text style={{marginBottom:20,color:'#494949',zIndex:2,fontSize:16,}}>결제카드 선택</Text>
           <Carousel
-            data={cardData}
+            data={cards}
             itemWidth={200}
             sliderWidth={sliderWidth}
             activeSlideAlignment={'start'}

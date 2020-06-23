@@ -8,18 +8,18 @@ import SubHeader from '../../components/subHeader';
 export default props => {
 
     const Data = [
-        {
-            favorite:true,
-            addressTitle:'우리집',
-            address: '부산광역시 구남언덕로 15 3층',
-            doorPW:'#1338',
-        },
-        {
-            favorite:false,
-            addressTitle:'회사',
-            address: '부산광역시 금정구 부산대학로 63번길 2, 과학기술연구동 201호',
-            doorPW:'#1338',
-        }
+        // {
+        //     favorite:true,
+        //     addressTitle:'우리집',
+        //     address: '부산광역시 구남언덕로 15 3층',
+        //     doorPW:'#1338',
+        // },
+        // {
+        //     favorite:false,
+        //     addressTitle:'회사',
+        //     address: '부산광역시 금정구 부산대학로 63번길 2, 과학기술연구동 201호',
+        //     doorPW:'#1338',
+        // }
     ]
     
     return(
@@ -53,8 +53,8 @@ export default props => {
                         keyExtractor={item => item.index}
                         ListEmptyComponent={
                             <View style={{justifyContent:'center',alignItems:'center',borderWidth:1,borderColor:'#e2e2e2',borderRadius:5,padding:20}}>
-                                <View style={{width:90,height:90,borderRadius:45,backgroundColor:'#01a1dd',justifyContent:'center',alignItems:'center'}}>
-                                    <Icon name="map-marker-circle" size={40} color={'#fff'}></Icon>
+                                <View style={{width:100,height:100,borderRadius:50,backgroundColor:'#f8f8f8',justifyContent:'center',alignItems:'center'}}>
+                                    <Icon name="map-marker-circle" size={40} color={'#d2d2d2'}></Icon>
                                 </View>
                                 <Text style={{fontSize:16,marginTop:20,color:'#888'}}>등록된 주소가 없습니다</Text>
                             </View>

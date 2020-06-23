@@ -10,16 +10,16 @@ export default props => {
 
     const state = {
         cards: [
-            {
-                cardName:'신한카드',
-                cardNumber: '0801',
-                cardDate:'2019년 2월 14일',
-            },
-            {
-                cardName:'삼성카드',
-                cardNumber: '8114',
-                cardDate:'2019년 3월 15일',
-            },
+            // {
+            //     cardName:'신한카드',
+            //     cardNumber: '0801',
+            //     cardDate:'2019년 2월 14일',
+            // },
+            // {
+            //     cardName:'삼성카드',
+            //     cardNumber: '8114',
+            //     cardDate:'2019년 3월 15일',
+            // },
         ],
     }
 
@@ -73,8 +73,8 @@ export default props => {
                         keyExtractor={item => item.index}
                         ListEmptyComponent={
                             <View style={{justifyContent:'center',alignItems:'center',padding:20,borderWidth:1,borderColor:'#e2e2e2',borderRadius:5}}>
-                                <View style={{width:90,height:90,borderRadius:45,backgroundColor:'#01a1dd',justifyContent:'center',alignItems:'center'}}>
-                                    <Icon name="credit-card" size={40} color={'#fff'}></Icon>
+                                <View style={{width:100,height:100,borderRadius:50,backgroundColor:'#f8f8f8',justifyContent:'center',alignItems:'center'}}>
+                                    <Icon name="credit-card" size={40} color={'#d2d2d2'}></Icon>
                                 </View>
                                 <Text style={{fontSize:16,marginTop:20,color:'#888',}}>등록된 카드가 없습니다</Text>
                             </View>
