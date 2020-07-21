@@ -21,7 +21,7 @@
     "@valdio/react-native-scrollable-tabview": "^0.8.12",
     "axios": "^0.19.1",
     "faker": "^4.1.0",
-    "lodash": "^4.17.15",
+    "lodash": "^4.17.19",
     "moment": "^2.24.0",
     "native-base": "^2.13.12",
     "numeral": "^2.0.6",
