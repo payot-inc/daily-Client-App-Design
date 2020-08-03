@@ -105,23 +105,30 @@ export default props => {
             <Text style={{width:30,fontSize:12}}>3개</Text>
             <Text style={{width:60,textAlign:'right',fontSize:12}}>4,500원</Text>
           </View>
+          <View style={{flexDirection:'row',justifyContent:'space-between',alignItems:'center',marginTop:5,paddingHorizontal:5}}>
+            <Text style={{flex:1,fontSize:12,color:'#888'}}>합계</Text>
+            <Text style={{flex:1,textAlign:'right',fontSize:12}}>4,500원</Text>
+          </View>
+
   
           <View style={{height:1,backgroundColor:'#e2e2e2',marginVertical:30,}}/>
         
           <View style={{marginBottom:10,justifyContent:'space-around'}}>
             <Text style={{color:'#494949',zIndex:2,fontSize:16,}}>검수완료된 품목</Text>
           </View>
-          <View style={{flexDirection:'row',justifyContent:'space-around',alignItems:'center',backgroundColor:'#EFF4F6',padding:5,marginBottom:5,}}>
-            <Text style={{width:70,color:'#01a1dd',fontSize:12}}>변경없음</Text>
+          <View style={{flexDirection:'row',justifyContent:'space-around',alignItems:'center',backgroundColor:'#f8f8f8',padding:5,marginBottom:5,}}>
             <Text style={{flex:1,fontSize:12}}>생활빨래 80리터</Text>
             <Text style={{width:30,fontSize:12}}>1개</Text>
             <Text style={{width:60,textAlign:'right',fontSize:12}}>19,800원</Text>
           </View>
           <View style={{flexDirection:'row',justifyContent:'space-around',alignItems:'center',backgroundColor:'#EFF4F6',padding:5,marginBottom:5,}}>
-            <Text style={{width:70,color:'#d22828',fontSize:12}}>수량변경</Text>
             <Text style={{flex:1,fontSize:12}}>와이셔츠</Text>
-            <Text style={{width:30,fontSize:12,color:'#d22828'}}>4개</Text>
-            <Text style={{width:60,textAlign:'right',fontSize:12,color:'#d22828'}}>6,000원</Text>
+            <Text style={{width:30,fontSize:12}}>4개</Text>
+            <Text style={{width:60,textAlign:'right',fontSize:12}}>6,000원</Text>
+          </View>
+          <View style={{flexDirection:'row',justifyContent:'space-between',alignItems:'center',marginTop:5,paddingHorizontal:5}}>
+            <Text style={{flex:1,fontSize:12,color:'#888'}}>검수로 변경된 합계</Text>
+            <Text style={{flex:1,textAlign:'right',fontSize:12,color:'#d22828'}}>4,500원</Text>
           </View>
 
 

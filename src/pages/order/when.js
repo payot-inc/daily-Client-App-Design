@@ -81,24 +81,24 @@ export default props => {
 
     const dayTable = [
         {
-            state:false,
-            day:'24일',
+            state:true,
+            day:'08월 05일',
             dayText:'월요일',
         },
         {
             state:false,
-            day:'25일',
-            dayText:'화요일'
+            day:'08월 07일',
+            dayText:'금요일'
         },
         {
             state:false,
-            day:'26일',
+            day:'08월 10일',
+            dayText:'월요일'
+        },
+        {
+            state:false,
+            day:'08월 12일',
             dayText:'수요일'
-        },
-        {
-            state:false,
-            day:'27일',
-            dayText:'목요일'
         },
     ]
 
@@ -197,35 +197,6 @@ export default props => {
                         </View>
                     </View>
 
-                    <View style={{marginBottom:40,}}>
-                        <View style={{marginBottom:15}}>
-                            <Text style={{fontSize:16}}>수거방식 선택</Text>
-                        </View>
-                        <View style={{}}>
-                            <TouchableOpacity 
-                                style={[{borderWidth:1,borderColor:'#01a1dd',borderRadius:5}]}
-                            >
-                                <View style={{height:40,flexDirection:'row',alignItems:'center',paddingHorizontal:10,}}>
-                                    <Icon name="check-circle" size={20} color={'#01a1dd'} ></Icon>
-                                    <Text style={{marginLeft:10,}}>
-                                        문 앞에 둘게요 비대면 수거 부탁드려요
-                                    </Text>
-                                </View>
-                            </TouchableOpacity>
-
-                            <TouchableOpacity 
-                                style={[{borderWidth:1,borderColor:'#e2e2e2',borderRadius:5,marginTop:10}]}
-                            >
-                                <View style={{height:40,flexDirection:'row',alignItems:'center',paddingHorizontal:10,}}>
-                                    <Icon name="check-circle" size={20} color={'#c2c2c2'} ></Icon>
-                                    <Text style={{marginLeft:10,}}>
-                                        직접 만나서 드릴게요
-                                    </Text>
-                                </View>
-                            </TouchableOpacity>
-                        </View>
-                    </View>
-
                     <View style={{marginBottom:50,}}>
                         <View style={{marginBottom:15}}>
                             <Text style={{fontSize:16}}>요청사항</Text>
@@ -281,22 +252,22 @@ const styles = StyleSheet.create({
         justifyContent:'space-between'
     },
     dayItemNumber:{
-        fontSize:18,
+        fontSize:13,
         color:'#494949'
     },
     dayActiveNumber:{
-        fontSize:18,
+        fontSize:13,
         color:'#fff'
     },
     dayItemText:{
-        fontSize:14,
+        fontSize:16,
         textAlign:'right',
-        color:'#494949'
+        color:'#494949',
     },
     dayActiveText:{
-        fontSize:14,
+        fontSize:16,
         textAlign:'right',
-        color:'#fff'
+        color:'#fff',
     },
 
 })
