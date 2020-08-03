@@ -8,23 +8,23 @@ import SkeletonView from '../../components/skeleton';
 export default props => {
 
   const Data = [
-    // {
-    //     date:'20.05.25',
-    //     favorite:true,
-    //     addressTitle:'우리집',
-    //     address: '부산광역시 구남언덕로 15 3층',
-    //     doorPW:'#1338',
-    //     amount: 145800,
-    //     isCancel:'45'
-    // },
-    // {
-    //     date:'20.05.19',
-    //     favorite:false,
-    //     addressTitle:'회사',
-    //     address: '부산광역시 금정구 부산대학로 63번길 2, 과학기술연구동 201호',
-    //     doorPW:'#1338',
-    //     amount: 32000
-    // }
+    {
+        date:'20.05.25',
+        favorite:true,
+        addressTitle:'우리집',
+        address: '부산광역시 구남언덕로 15 3층',
+        doorPW:'#1338',
+        amount: 145800,
+        isCancel:'45'
+    },
+    {
+        date:'20.05.19',
+        favorite:false,
+        addressTitle:'회사',
+        address: '부산광역시 금정구 부산대학로 63번길 2, 과학기술연구동 201호',
+        doorPW:'#1338',
+        amount: 32000
+    }
   ]
 
   return(
@@ -131,9 +131,9 @@ export default props => {
               </View>
             }
 
-            CellRendererComponent={()=>
-              <SkeletonView />
-            }
+            // CellRendererComponent={()=>
+            //   <SkeletonView />
+            // }
           >
           </FlatList>
 

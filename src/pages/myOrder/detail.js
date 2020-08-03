@@ -79,40 +79,56 @@ export default props => {
                 contentContainerStyle={{backgroundColor:'#f2f2f2'}}
             >
                 <View style={styles.section}>
-                    <View style={styles.sectionCont}>
-                        <View style={{alignItems:'center',justifyContent:'center',marginBottom:30}}>
-                            <Text style={{fontSize:20,textAlign:'left'}}>현재 <Text style={{color:'#01a1dd',fontWeight:'bold'}}>수거완료</Text>되었습니다</Text>
+                    <View style={styles.sectionCont}>          
+                        <View style={{marginBottom:30}}>
+                            <View style={[{flexDirection:'row',justifyContent:'space-around',alignItems:'center',position:'relative',paddingBottom:15}]}>
+                                <View style={{position:'relative',flex:1,alignItems:'center'}}>
+                                    <View style={{height:5,backgroundColor:'#D3EDF6',position:'absolute',top:30,right:0,width:'50%'}}></View>
+                                    <View style={{width:90,height:60,alignItems:'center',justifyContent:'center',backgroundColor:'#D3EDF6',borderRadius:5,}}>
+                                        <Icon name="check" color={'#01a1dd'} style={{marginBottom:3}} size={16}></Icon>
+                                        <Text style={{textAlign:'center',color:'#494949'}}>주문완료</Text>
+                                    </View>
+                                </View>
+                                <View style={{position:'relative',flex:1,alignItems:'center'}}>
+                                    <View style={{height:5,borderRadius:2,backgroundColor:'#D3EDF6',position:'absolute',top:30,left:0,width:'100%'}}></View>
+                                    <View style={{width:90,height:60,alignItems:'center',justifyContent:'center',backgroundColor:'#D3EDF6',borderRadius:5,}}>
+                                        <Icon name="check" color={'#01a1dd'} style={{marginBottom:3}} size={16}></Icon>
+                                        <Text style={{textAlign:'center', color:'#494949'}}>수거중</Text>
+                                    </View>
+                                </View>
+                                <View style={{position:'relative',flex:1,alignItems:'center'}}>
+                                    <View style={{height:5,backgroundColor:'#01a1dd',position:'absolute',top:30,left:0,width:'50%'}}></View>
+                                    <View style={{width:5,height:'50%',backgroundColor:'#01a1dd',position:'absolute',bottom:-15,left:'50%',}}></View>
+                                    <View style={{width:90,height:60,alignItems:'center',justifyContent:'center',backgroundColor:'#01a1dd',borderRadius:5,}}>
+                                        <Icon name="truck" color={'#fff'} style={{marginBottom:3}} size={16}></Icon>
+                                        <Text style={{textAlign:'center',color:'#fff',fontWeight:'bold'}}>수거완료</Text>
+                                    </View>
+                                </View>
+                            </View>
+                            <View style={[{flexDirection:'row',justifyContent:'space-around',alignItems:'center',position:'relative',paddingTop:15,}]}>
+                                <View style={{position:'relative',flex:1,alignItems:'center'}}>
+                                    <View style={{height:5,backgroundColor:'#e2e2e2',position:'absolute',top:30,right:0,width:'50%'}}></View>
+                                    <View style={{width:90,height:60,alignItems:'center',justifyContent:'center',borderWidth:3,borderColor:'#e2e2e2',backgroundColor:'#fff',borderRadius:5,}}>
+                                        <Text style={{textAlign:'center',color:'#888'}}>배송완료</Text>
+                                    </View>
+                                </View>
+                                <View style={{position:'relative',flex:1,alignItems:'center'}}>
+                                    <View style={{height:5,backgroundColor:'#e2e2e2',position:'absolute',top:30,left:0,width:'100%'}}></View>
+                                    <View style={{width:90,height:60,alignItems:'center',justifyContent:'center',borderWidth:3,borderColor:'#e2e2e2',backgroundColor:'#fff',borderRadius:5,}}>
+                                        <Text style={{textAlign:'center',color:'#888'}}>배송중</Text>
+                                    </View>
+                                </View>
+                                <View style={{position:'relative',flex:1,alignItems:'center'}}>
+                                    <View style={{height:5,borderRadius:2,backgroundColor:'#e2e2e2',position:'absolute',top:30,left:0,width:'50%'}}></View>
+                                    <View style={{width:5,height:'50%',backgroundColor:'#e2e2e2',position:'absolute',top:-15,left:'50%',}}></View>
+                                    <View style={{width:90,height:60,alignItems:'center',justifyContent:'center',borderWidth:3,borderColor:'#e2e2e2',backgroundColor:'#fff',borderRadius:5,}}>
+                                        <Text style={{textAlign:'center', color:'#888'}}>작업완료</Text>
+                                    </View>
+                                </View>
+                            </View>
                         </View>
-                        <View style={[{flexDirection:'row',justifyContent:'space-around',alignItems:'center',position:'relative',marginBottom:40,}]}>
-                            <View style={{position:'relative',flex:1,alignItems:'center'}}>
-                                <View style={{height:5,backgroundColor:'#f2f2f2',position:'absolute',top:25,left:0,width:'100%'}}></View>
-                                <View style={{width:50,height:50,alignItems:'center',justifyContent:'center',borderRadius:30,backgroundColor:'#f2f2f2'}}>
-                                    <Icon name="clipboard-check-outline" size={24} color={'#c2c2c2'}></Icon>
-                                </View>
-                                <Text style={{marginTop:10,textAlign:'center',color:'#494949'}}>접수완료</Text>
-                            </View>
-                            <View style={{position:'relative',flex:1,alignItems:'center'}}>
-                                <View style={{height:5,borderRadius:2,backgroundColor:'#01a1dd',position:'absolute',top:30,left:0,width:'100%'}}></View>
-                                <View style={{width:60,height:60,alignItems:'center',justifyContent:'center',borderRadius:30,backgroundColor:'#01a1dd'}}>
-                                    <Icon name="cube-outline" size={32} color={'#fff'}></Icon>
-                                </View>
-                                <Text style={{marginTop:10,textAlign:'center', color:'#01a1dd',fontWeight:'bold'}}>수거완료</Text>
-                            </View>
-                            <View style={{position:'relative',flex:1,alignItems:'center'}}>
-                                <View style={{height:5,backgroundColor:'#f2f2f2',position:'absolute',top:25,left:0,width:'100%'}}></View>
-                                <View style={{width:50,height:50,alignItems:'center',justifyContent:'center',borderRadius:30,backgroundColor:'#f2f2f2'}}>
-                                    <Icon name="truck-fast" size={24} color={'#c2c2c2'}></Icon>
-                                </View>
-                                <Text style={{marginTop:10,textAlign:'center',color:'#494949'}}>배송중</Text>
-                            </View>
-                            <View style={{position:'relative',flex:1,alignItems:'center'}}>
-                                <View style={{height:5,backgroundColor:'#f2f2f2',position:'absolute',top:25,left:0,width:'100%'}}></View>
-                                <View style={{width:50,height:50,alignItems:'center',justifyContent:'center',borderRadius:30,backgroundColor:'#f2f2f2'}}>
-                                    <Icon name="gift-outline" size={24} color={'#c2c2c2'}></Icon>
-                                </View>
-                                <Text style={{marginTop:10,textAlign:'center',color:'#494949'}}>배송완료</Text>
-                            </View>                            
-                        </View>
+                    
+
                         <View style={[styles.boxItem]}>
                             <View  style={styles.contRow}>
                                 <Text style={{color:'#494949'}} >주문확인</Text>

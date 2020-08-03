@@ -148,7 +148,7 @@ export default props => {
 
                 
                 <View style={styles.inner}>
-                    <TouchableOpacity
+                    {/* <TouchableOpacity
                         onPress={()=>{props.navigation.navigate('receiptView')}}
                         style={[styles.stateMessage,{paddingVertical:15,marginBottom:10}]}
                     >
@@ -184,7 +184,7 @@ export default props => {
                                 </View>
                             </View>
                         </View>
-                    </TouchableOpacity>
+                    </TouchableOpacity> */}
 
                     <View style={styles.quickBtns}>
                         <View style={[styles.quickBtnWrap,{marginRight:5}]}>
